@@ -406,7 +406,7 @@ wheels = [
 
 [[package]]
 name = "gradio-rerun"
-version = "0.0.8"
+version = "0.23.0"
 source = { editable = "." }
 dependencies = [
     { name = "gradio" },
@@ -434,7 +434,7 @@ requires-dist = [
     { name = "gradio", specifier = ">=5.22.0" },
     { name = "opencv-python" },
     { name = "opencv-python", marker = "extra == 'dev'", specifier = ">=4.10.0" },
-    { name = "rerun-sdk", specifier = ">=0.22.1" },
+    { name = "rerun-sdk", specifier = ">=0.23.0" },
     { name = "twine", marker = "extra == 'dev'" },
 ]
 provides-extras = ["dev"]
@@ -1238,7 +1238,7 @@ wheels = [
 
 [[package]]
 name = "rerun-sdk"
-version = "0.22.1"
+version = "0.23.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -1248,11 +1248,11 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a9/41/f9724c6ee4b4d45f9ae433f41fc8b4f2827d5b3f9459b9e9a9c55fdda5ab/rerun_sdk-0.22.1-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:176853d14bcac0b3cab8b240fe6760e32a577b1edd9ecb2fd0656e83f046a2c4", size = 46819325 },
-    { url = "https://files.pythonhosted.org/packages/01/8e/db9fd7e7d9d9ec6e3f0781ce6f3b71c06952f9b0c40e9720822fd83f711e/rerun_sdk-0.22.1-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:dea4a50c916bc82bd97a8f9dc44c71f9a9fccec7e73f37edfaa0de800caf5dce", size = 44566672 },
-    { url = "https://files.pythonhosted.org/packages/ad/41/87079d0a897e4fc2dd54a356be9556626f40ec1ff1c3393178e7ac9feb9d/rerun_sdk-0.22.1-cp38-abi3-manylinux_2_31_aarch64.whl", hash = "sha256:29d807909f5e484aa6427d9fb25706d0a154de392a4ca47eb303fbd135c0e382", size = 49830061 },
-    { url = "https://files.pythonhosted.org/packages/1e/db/3ce2be017d7d4ac0948fb064bf7417b36c96bc07d1b8a922017606ba03c6/rerun_sdk-0.22.1-cp38-abi3-manylinux_2_31_x86_64.whl", hash = "sha256:b9672412d0cdf57c79c10ca683e59716399da3358df78b985b25093d022ebbaf", size = 51423327 },
-    { url = "https://files.pythonhosted.org/packages/43/eb/edafdcba1619955c2c9b66c7a1bcbbce4ad62a1a36db984b46aa793fe366/rerun_sdk-0.22.1-cp38-abi3-win_amd64.whl", hash = "sha256:d3d0afe1b8e749a1088a0bb75f372ad7fe70eb3728bd32e07bf78300436a053d", size = 42085149 },
+    { url = "https://files.pythonhosted.org/packages/f2/76/39d842435ad0ce53a4e300c9c4fbaebaef46e790d7f8c25e3e647fff0c6c/rerun_sdk-0.23.0-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:e050c7a3df6aa727d2378de61b81510ec51b91485422eb17687deb35cb03fdaa", size = 66083906 },
+    { url = "https://files.pythonhosted.org/packages/f1/19/c9fc2a5e73f9ee60dcb88052e4ec7951cad54ba3841ecb87538528258064/rerun_sdk-0.23.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:fa76cab9e29443da777821c00da06077b6530ab7ede6265d1396425b4b47881d", size = 62032144 },
+    { url = "https://files.pythonhosted.org/packages/42/0b/503deb50c0cbff6b44cb0dc9523387b2a8c28cbe4362f42136a39df92507/rerun_sdk-0.23.0-cp39-abi3-manylinux_2_31_aarch64.whl", hash = "sha256:670240c2040cd663ac40890cf9672820e2eaf51cff7be26da62dac163abeaaa1", size = 68216723 },
+    { url = "https://files.pythonhosted.org/packages/bb/c7/9a47058495f59fea315439c056ad63a5c142024a6ec7e704c742bf50308e/rerun_sdk-0.23.0-cp39-abi3-manylinux_2_31_x86_64.whl", hash = "sha256:047706da72fd84a2e993a2ba684d23fc2ddae15d7c5d8ba5341da8eca67f05e5", size = 71429995 },
+    { url = "https://files.pythonhosted.org/packages/4a/fe/53b25b78037729168bb4e5d0f6ddc9e45112246e5e17c9d23758cb5d9ebc/rerun_sdk-0.23.0-cp39-abi3-win_amd64.whl", hash = "sha256:f489e35f65a6e276d6752a4aec55de72ec24c4d3f7f60f2e3a124aa9986a7057", size = 57590137 },
 ]
 
 [[package]]

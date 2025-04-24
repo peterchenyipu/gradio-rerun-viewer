@@ -10,7 +10,7 @@ app_file: space.py
 ---
 
 # `gradio_rerun`
-<a href="https://pypi.org/project/gradio_rerun/" target="_blank"><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gradio_rerun"></a> <a href="https://github.com/rerun-io/gradio-rerun-viewer/issues" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/Issues-white?logo=github&logoColor=black"></a> 
+<a href="https://pypi.org/project/gradio_rerun/" target="_blank"><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gradio_rerun"></a> <a href="https://github.com/rerun-io/gradio-rerun-viewer/issues" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/Issues-white?logo=github&logoColor=black"></a> <a href="https://huggingface.co/spaces/rerun/gradio-rerun-viewer/discussions" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97%20Discuss-%23097EFF?style=flat&logoColor=black"></a>
 
 Rerun viewer with Gradio
 
@@ -96,10 +96,6 @@ def streaming_repeated_blur(recording_id: str, img):
         # you want the user to be able to see progress.
         yield stream.read()
 
-    # Ensure we consume everything from the recording.
-    stream.flush()
-    yield stream.read()
-
 
 # In this example the user is able to add keypoints to an image visualized in Rerun.
 # These keypoints are stored in the global state, we use the session id to keep track of which keypoints belong
@@ -171,8 +167,6 @@ def register_keypoint(
     rec.set_time("iteration", sequence=index)
     rec.log(f"{item.entity_path}/keypoint", rr.Points2D(keypoints, radii=2))
 
-    # Ensure we consume everything from the recording.
-    stream.flush()
     yield stream.read()
 
 
@@ -549,5 +543,5 @@ The code snippet below is accurate in cases where the component is used as both 
 ## `RerunData`
 ```python
 class RerunData(GradioRootModel):
-    root: Sequence[FileData | Path | str]
+    root: Sequence[FileData | Path | str] | None
 ```
