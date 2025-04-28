@@ -406,12 +406,13 @@ wheels = [
 
 [[package]]
 name = "gradio-rerun"
-version = "0.23.0"
+version = "0.23.1"
 source = { editable = "." }
 dependencies = [
     { name = "gradio" },
     { name = "opencv-python" },
     { name = "rerun-sdk" },
+    { name = "twine" },
 ]
 
 [package.optional-dependencies]
@@ -426,6 +427,7 @@ dev = [
     { name = "build" },
     { name = "mypy" },
     { name = "opencv-python" },
+    { name = "twine" },
 ]
 
 [package.metadata]
@@ -434,7 +436,8 @@ requires-dist = [
     { name = "gradio", specifier = ">=5.22.0" },
     { name = "opencv-python" },
     { name = "opencv-python", marker = "extra == 'dev'", specifier = ">=4.10.0" },
-    { name = "rerun-sdk", specifier = ">=0.23.0" },
+    { name = "rerun-sdk", specifier = ">=0.23.1" },
+    { name = "twine", specifier = ">=6.1.0" },
     { name = "twine", marker = "extra == 'dev'" },
 ]
 provides-extras = ["dev"]
@@ -444,6 +447,7 @@ dev = [
     { name = "build", specifier = ">=1.2.2.post1" },
     { name = "mypy", specifier = ">=1.15.0" },
     { name = "opencv-python", specifier = ">=4.10.0.84" },
+    { name = "twine", specifier = ">=5.1.1" },
 ]
 
 [[package]]
@@ -512,6 +516,18 @@ wheels = [
 ]
 
 [[package]]
+name = "id"
+version = "1.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/22/11/102da08f88412d875fa2f1a9a469ff7ad4c874b0ca6fed0048fe385bdb3d/id-1.5.0.tar.gz", hash = "sha256:292cb8a49eacbbdbce97244f47a97b4c62540169c976552e497fd57df0734c1d", size = 15237 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9f/cb/18326d2d89ad3b0dd143da971e77afd1e6ca6674f1b1c3df4b6bec6279fc/id-1.5.0-py3-none-any.whl", hash = "sha256:f1434e1cef91f2cbb8a4ec64663d5a23b9ed43ef44c4c957d02583d61714c658", size = 13611 },
+]
+
+[[package]]
 name = "idna"
 version = "3.10"
 source = { registry = "https://pypi.org/simple" }
@@ -525,7 +541,7 @@ name = "importlib-metadata"
 version = "8.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp" },
+    { name = "zipp", marker = "python_full_version < '3.12'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/cd/12/33e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1b/importlib_metadata-8.5.0.tar.gz", hash = "sha256:71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7", size = 55304 }
 wheels = [
@@ -955,15 +971,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pkginfo"
-version = "1.10.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/2f/72/347ec5be4adc85c182ed2823d8d1c7b51e13b9a6b0c1aae59582eca652df/pkginfo-1.10.0.tar.gz", hash = "sha256:5df73835398d10db79f8eecd5cd86b1f6d29317589ea70796994d49399af6297", size = 378457 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/56/09/054aea9b7534a15ad38a363a2bd974c20646ab1582a387a95b8df1bfea1c/pkginfo-1.10.0-py3-none-any.whl", hash = "sha256:889a6da2ed7ffc58ab5b900d888ddce90bce912f2d2de1dc1c26f4cb9fe65097", size = 30392 },
-]
-
-[[package]]
 name = "pyarrow"
 version = "17.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1238,7 +1245,7 @@ wheels = [
 
 [[package]]
 name = "rerun-sdk"
-version = "0.23.0"
+version = "0.23.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -1248,11 +1255,11 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f2/76/39d842435ad0ce53a4e300c9c4fbaebaef46e790d7f8c25e3e647fff0c6c/rerun_sdk-0.23.0-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:e050c7a3df6aa727d2378de61b81510ec51b91485422eb17687deb35cb03fdaa", size = 66083906 },
-    { url = "https://files.pythonhosted.org/packages/f1/19/c9fc2a5e73f9ee60dcb88052e4ec7951cad54ba3841ecb87538528258064/rerun_sdk-0.23.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:fa76cab9e29443da777821c00da06077b6530ab7ede6265d1396425b4b47881d", size = 62032144 },
-    { url = "https://files.pythonhosted.org/packages/42/0b/503deb50c0cbff6b44cb0dc9523387b2a8c28cbe4362f42136a39df92507/rerun_sdk-0.23.0-cp39-abi3-manylinux_2_31_aarch64.whl", hash = "sha256:670240c2040cd663ac40890cf9672820e2eaf51cff7be26da62dac163abeaaa1", size = 68216723 },
-    { url = "https://files.pythonhosted.org/packages/bb/c7/9a47058495f59fea315439c056ad63a5c142024a6ec7e704c742bf50308e/rerun_sdk-0.23.0-cp39-abi3-manylinux_2_31_x86_64.whl", hash = "sha256:047706da72fd84a2e993a2ba684d23fc2ddae15d7c5d8ba5341da8eca67f05e5", size = 71429995 },
-    { url = "https://files.pythonhosted.org/packages/4a/fe/53b25b78037729168bb4e5d0f6ddc9e45112246e5e17c9d23758cb5d9ebc/rerun_sdk-0.23.0-cp39-abi3-win_amd64.whl", hash = "sha256:f489e35f65a6e276d6752a4aec55de72ec24c4d3f7f60f2e3a124aa9986a7057", size = 57590137 },
+    { url = "https://files.pythonhosted.org/packages/dd/6e/a125f4fe2de3269f443b7cb65d465ffd37a836a2dac7e4318e21239d78c8/rerun_sdk-0.23.1-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:fe06d21cfcf4d84a9396f421d4779efabec7e9674d232a2c552c8a91d871c375", size = 66094053 },
+    { url = "https://files.pythonhosted.org/packages/55/f6/b6d13322b05dc77bd9a0127e98155c2b7ee987a236fd4d331eed2e547a90/rerun_sdk-0.23.1-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:823ae87bfa644e06fb70bada08a83690dd23d9824a013947f80a22c6731bdc0d", size = 62047843 },
+    { url = "https://files.pythonhosted.org/packages/a5/7f/6a7422cb727e14a65b55b0089988eeea8d0532c429397a863e6ba395554a/rerun_sdk-0.23.1-cp39-abi3-manylinux_2_31_aarch64.whl", hash = "sha256:dc5129f8744f71249bf45558c853422c51ef39b6b5eea0ea1f602c6049ce732f", size = 68214509 },
+    { url = "https://files.pythonhosted.org/packages/4f/86/3aee9eadbfe55188a2c7d739378545b4319772a4d3b165e8d3fc598fa630/rerun_sdk-0.23.1-cp39-abi3-manylinux_2_31_x86_64.whl", hash = "sha256:ee0d0e17df0e08be13b77cc74884c5d8ba8edb39b6f5a60dc2429d39033d90f6", size = 71442196 },
+    { url = "https://files.pythonhosted.org/packages/a7/ba/028bd382e2ae21e6643cec25f423285dbc6b328ce56d55727b4101ef9443/rerun_sdk-0.23.1-cp39-abi3-win_amd64.whl", hash = "sha256:d4273db55b56310b053a2de6bf5927a8692cf65f4d234c6e6928fb24ed8a960d", size = 57583198 },
 ]
 
 [[package]]
@@ -1408,12 +1415,12 @@ wheels = [
 
 [[package]]
 name = "twine"
-version = "5.1.1"
+version = "6.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "importlib-metadata" },
-    { name = "keyring" },
-    { name = "pkginfo" },
+    { name = "id" },
+    { name = "keyring", marker = "platform_machine != 'ppc64le' and platform_machine != 's390x'" },
+    { name = "packaging" },
     { name = "readme-renderer" },
     { name = "requests" },
     { name = "requests-toolbelt" },
@@ -1421,9 +1428,9 @@ dependencies = [
     { name = "rich" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/77/68/bd982e5e949ef8334e6f7dcf76ae40922a8750aa2e347291ae1477a4782b/twine-5.1.1.tar.gz", hash = "sha256:9aa0825139c02b3434d913545c7b847a21c835e11597f5255842d457da2322db", size = 225531 }
+sdist = { url = "https://files.pythonhosted.org/packages/c8/a2/6df94fc5c8e2170d21d7134a565c3a8fb84f9797c1dd65a5976aaf714418/twine-6.1.0.tar.gz", hash = "sha256:be324f6272eff91d07ee93f251edf232fc647935dd585ac003539b42404a8dbd", size = 168404 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5d/ec/00f9d5fd040ae29867355e559a94e9a8429225a0284a3f5f091a3878bfc0/twine-5.1.1-py3-none-any.whl", hash = "sha256:215dbe7b4b94c2c50a7315c0275d2258399280fbb7d04182c7e55e24b5f93997", size = 38650 },
+    { url = "https://files.pythonhosted.org/packages/7c/b6/74e927715a285743351233f33ea3c684528a0d374d2e43ff9ce9585b73fe/twine-6.1.0-py3-none-any.whl", hash = "sha256:a47f973caf122930bf0fbbf17f80b83bc1602c9ce393c7845f289a3001dc5384", size = 40791 },
 ]
 
 [[package]]
