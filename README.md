@@ -40,13 +40,18 @@ import cv2
 import gradio as gr
 import rerun as rr
 import rerun.blueprint as rrb
-from color_grid import build_color_grid
 from gradio_rerun import Rerun
 from gradio_rerun.events import (
     SelectionChange,
     TimelineChange,
     TimeUpdate,
 )
+
+try:
+    from .color_grid import build_color_grid
+except ImportError:
+    # For running the demo directly using `gradio cc dev`.
+    from color_grid import build_color_grid  # type: ignore[no-redef,import-not-found]
 
 
 # Whenever we need a recording, we construct a new recording stream.
@@ -64,7 +69,7 @@ def get_recording(recording_id: str) -> rr.RecordingStream:
 def streaming_repeated_blur(recording_id: str, img):
     # Here we get a recording using the provided recording id.
     rec = get_recording(recording_id)
-    stream = rec.binary_stream()
+    stream = rec.binary_stream()  # type: ignore
 
     if img is None:
         raise gr.Error("Must provide an image to blur.")
@@ -107,6 +112,8 @@ keypoints_per_session_per_sequence_index: dict[str, dict[int, list[Keypoint]]] =
 
 
 def get_keypoints_for_user_at_sequence_index(request: gr.Request, sequence: int) -> list[Keypoint]:
+    if request.session_hash is None:
+        raise ValueError("Session hash is None")
     per_sequence = keypoints_per_session_per_sequence_index[request.session_hash]
     if sequence not in per_sequence:
         per_sequence[sequence] = []
@@ -115,11 +122,13 @@ def get_keypoints_for_user_at_sequence_index(request: gr.Request, sequence: int)
 
 
 def initialize_instance(request: gr.Request) -> None:
+    if request.session_hash is None:
+        raise ValueError("Session hash is None")
     keypoints_per_session_per_sequence_index[request.session_hash] = {}
 
 
 def cleanup_instance(request: gr.Request) -> None:
-    if request.session_hash in keypoints_per_session_per_sequence_index:
+    if request.session_hash is not None and request.session_hash in keypoints_per_session_per_sequence_index:
         del keypoints_per_session_per_sequence_index[request.session_hash]
 
 
@@ -154,7 +163,7 @@ def register_keypoint(
 
     # Now we can produce a valid keypoint.
     rec = get_recording(active_recording_id)
-    stream = rec.binary_stream()
+    stream = rec.binary_stream()  # type: ignore
 
     # We round `current_time` toward 0, because that gives us the sequence index
     # that the user is currently looking at, due to the Viewer's latest-at semantics.
@@ -162,7 +171,7 @@ def register_keypoint(
 
     # We keep track of the keypoints per sequence index for each user manually.
     keypoints = get_keypoints_for_user_at_sequence_index(request, index)
-    keypoints.append(item.position[0:2])
+    keypoints.append((item.position[0], item.position[1]))
 
     rec.set_time("iteration", sequence=index)
     rec.log(f"{item.entity_path}/keypoint", rr.Points2D(keypoints, radii=2))
@@ -281,9 +290,9 @@ with gr.Blocks() as demo:
             choose_rrd = gr.Dropdown(
                 label="RRD",
                 choices=[
-                    f"{rr.bindings.get_app_url()}/examples/arkit_scenes.rrd",
-                    f"{rr.bindings.get_app_url()}/examples/dna.rrd",
-                    f"{rr.bindings.get_app_url()}/examples/plots.rrd",
+                    f"{rr.bindings.get_app_url()}/examples/arkit_scenes.rrd",  # type: ignore[private-use]
+                    f"{rr.bindings.get_app_url()}/examples/dna.rrd",  # type: ignore[private-use]
+                    f"{rr.bindings.get_app_url()}/examples/plots.rrd",  # type: ignore[private-use]
                 ],
             )
         with gr.Row():
@@ -296,6 +305,7 @@ with gr.Blocks() as demo:
                 },
             )
         choose_rrd.change(lambda x: x, inputs=[choose_rrd], outputs=[viewer])
+
     demo.load(initialize_instance)
     demo.close(cleanup_instance)
 
