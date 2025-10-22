@@ -567,7 +567,7 @@ wheels = [
 
 [[package]]
 name = "gradio-rerun"
-version = "0.26.0"
+version = "0.26.1"
 source = { editable = "." }
 dependencies = [
     { name = "gradio" },
@@ -598,7 +598,7 @@ requires-dist = [
     { name = "gradio", specifier = ">=5.49.1" },
     { name = "opencv-python" },
     { name = "opencv-python", marker = "extra == 'dev'", specifier = ">=4.10.0" },
-    { name = "rerun-sdk", specifier = "==0.26.0" },
+    { name = "rerun-sdk", specifier = "==0.26.1" },
     { name = "twine", specifier = ">=6.1.0" },
     { name = "twine", marker = "extra == 'dev'" },
 ]
@@ -1667,7 +1667,7 @@ wheels = [
 
 [[package]]
 name = "rerun-sdk"
-version = "0.26.0"
+version = "0.26.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -1677,11 +1677,11 @@ dependencies = [
     { name = "typing-extensions" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/29/fa/1e08ff460ce1d35bf4805a9ad0a3b2611cf475d1ae013e0fbafcad59845e/rerun_sdk-0.26.0-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:ae7ed38fcf6c78a4e348d3fe7ef7b8340d801cb2d9cb17572a834b5fe1fecaab", size = 93335678, upload-time = "2025-10-16T14:23:35.306Z" },
-    { url = "https://files.pythonhosted.org/packages/9a/37/f552c9f64361e95a8857c6c6952be7006f39775e4d5f5aea495ca48cfd5b/rerun_sdk-0.26.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:4fba13c72c973bbae8891224df2d91dac3db2bc153c64f35c5cbcb7b2138c7d1", size = 86314314, upload-time = "2025-10-16T14:23:40.24Z" },
-    { url = "https://files.pythonhosted.org/packages/3a/f1/35932308d7729c03a7f2a9f9a2d38989eb70d6122f4e59de3e56c4606b13/rerun_sdk-0.26.0-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:a814fd7469c6804abbc9bc908a6e2e95155884fd7719bbd395b68fdee9fe90c6", size = 92675550, upload-time = "2025-10-16T14:23:44.486Z" },
-    { url = "https://files.pythonhosted.org/packages/53/c2/a9429d484330555d93ef61e38278ab2c9a7940b2f07a3dd315f222a5f37e/rerun_sdk-0.26.0-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:52a07d0ba9319e9a7bc62bab99f2ba2634a0fc8c9c1ba26457df50c973325d44", size = 98761618, upload-time = "2025-10-16T14:23:48.497Z" },
-    { url = "https://files.pythonhosted.org/packages/58/b0/afea49ac66f8d8150de1c168dc374be97bd001a205678944288f9a5a4de2/rerun_sdk-0.26.0-cp39-abi3-win_amd64.whl", hash = "sha256:37ac2dd27f87150d1e0637c6996ce062e8dee59fbd5c38f87f69f53411cb1f82", size = 84254240, upload-time = "2025-10-16T14:23:52.845Z" },
+    { url = "https://files.pythonhosted.org/packages/5c/d9/66dc80a335a0d4be1a9394ef94f35dffdad32dd3840be6ed5be42d1978a8/rerun_sdk-0.26.1-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:b7c65402a7d49b21ff6ab2ed23f3b33f7f12bbf22bfb601f0a63443a190773d0", size = 93345083, upload-time = "2025-10-21T15:22:46.673Z" },
+    { url = "https://files.pythonhosted.org/packages/50/b1/4794d4decabcb7df56f5b7f510d771dce7dae2c343b0e43c946b1b7d3b4b/rerun_sdk-0.26.1-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:39684e37f80c7e9c72c15f82d2762f3d4ab2daa4c0b917c9958410a27295bb67", size = 86316183, upload-time = "2025-10-21T15:22:51.33Z" },
+    { url = "https://files.pythonhosted.org/packages/c5/f9/f48066c63f4214578524e1cd74cfffb68fd28da9d28f8bd25b9401810987/rerun_sdk-0.26.1-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:a678d4d1a07286230d46f6136f7e95cb37daa1b315919807d9db8c9ed075c28a", size = 92669003, upload-time = "2025-10-21T15:22:55.477Z" },
+    { url = "https://files.pythonhosted.org/packages/64/ae/a4ea619511cb221d0222f007be8d243552d5eac02565e1f02d54344345b8/rerun_sdk-0.26.1-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:5bab964bb314ec026fca32da02eec58a122492a0c1e49b442c2057798a1d5f0b", size = 98762385, upload-time = "2025-10-21T15:23:00.02Z" },
+    { url = "https://files.pythonhosted.org/packages/7b/c3/ad8b8cd82f9dab7841b6b48a993fa0ba20460f05caed6c5d8dc169f2a05f/rerun_sdk-0.26.1-cp39-abi3-win_amd64.whl", hash = "sha256:315d627c53c884e04cb974fa9788a7329f9493e185ee6da6c941b64e19db1191", size = 84253683, upload-time = "2025-10-21T15:23:03.911Z" },
 ]
 
 [[package]]
@@ -1907,7 +1907,7 @@ wheels = [
 
 [[package]]
 name = "typer"
-version = "0.19.2"
+version = "0.20.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -1915,9 +1915,9 @@ dependencies = [
     { name = "shellingham" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz", hash = "sha256:9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca", size = 104755, upload-time = "2025-09-23T09:47:48.256Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/8f/28/7c85c8032b91dbe79725b6f17d2fffc595dff06a35c7a30a37bef73a1ab4/typer-0.20.0.tar.gz", hash = "sha256:1aaf6494031793e4876fb0bacfa6a912b551cf43c1e63c800df8b1a866720c37", size = 106492, upload-time = "2025-10-20T17:03:49.445Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/00/22/35617eee79080a5d071d0f14ad698d325ee6b3bf824fc0467c03b30e7fa8/typer-0.19.2-py3-none-any.whl", hash = "sha256:755e7e19670ffad8283db353267cb81ef252f595aa6834a0d1ca9312d9326cb9", size = 46748, upload-time = "2025-09-23T09:47:46.777Z" },
+    { url = "https://files.pythonhosted.org/packages/78/64/7713ffe4b5983314e9d436a90d5bd4f63b6054e2aca783a3cfc44cb95bbf/typer-0.20.0-py3-none-any.whl", hash = "sha256:5b463df6793ec1dca6213a3cf4c0f03bc6e322ac5e16e13ddd622a889489784a", size = 47028, upload-time = "2025-10-20T17:03:47.617Z" },
 ]
 
 [[package]]
