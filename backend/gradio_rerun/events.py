@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+from dataclasses import dataclass
 from typing import Any
 
 from gradio import EventData
@@ -126,3 +128,27 @@ class SelectionChange(EventData):
         event = _viewer_event_from_json_str(data)
         assert event.type == "selection_change"
         self.payload: SelectionChangeEvent = event
+
+
+@dataclass
+class TimeSelectionPayload:
+    """Payload for the time_selection_change event."""
+
+    min: float | None
+    """The minimum time of the selection range, or None if no selection."""
+
+    max: float | None
+    """The maximum time of the selection range, or None if no selection."""
+
+
+class TimeSelectionChange(EventData):
+    """Event triggered when the time selection (loop region) changes on the timeline."""
+
+    def __init__(self, target: Any, data: Any) -> None:
+        super().__init__(target, data)
+
+        parsed = json.loads(data) if isinstance(data, str) else data
+        self.payload: TimeSelectionPayload = TimeSelectionPayload(
+            min=parsed.get("min"),
+            max=parsed.get("max"),
+        )
