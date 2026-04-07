@@ -53,6 +53,11 @@ class Rerun(Component, StreamingOutput):
             doc="Fired when the selection changes. Callback should accept a parameter of type "
             "`gradio_rerun.events.SelectionChange`.",
         ),
+        EventListener(
+            "time_selection_change",
+            doc="Fired when the time selection (loop region) changes on the timeline. "
+            "Callback should accept a parameter of type `gradio_rerun.events.TimeSelectionChange`.",
+        ),
     ]
 
     data_model = RerunData

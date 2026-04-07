@@ -25,6 +25,7 @@
 		selection_change: SelectionChangeItem[];
 		time_update: number;
 		timeline_change: { timeline: string; time: number };
+		time_selection_change: string;
 	}
 
 	interface RerunProps {
@@ -43,6 +44,7 @@
 	let channel: LogChannel;
 	let ref = $state<HTMLDivElement>();
 	let dragging = $state(false);
+
 
 	/**
 	 * Used to keep track of the playlist currently being fetched
